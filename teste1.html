@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mourão Trânsito Vivo - Mobilidade e Segurança</title>
+    <style>
+        :root {
+            --primary: #007bff;
+            --secondary: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--warning);
+        }
+
+        .logo span {
+            color: white;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--warning);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://unsplash.com') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
+        }
+
+        .card.warning { border-top-color: var(--warning); }
+        .card.success { border-top-color: var(--secondary); }
+        .card.danger { border-top-color: var(--danger); }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-box {
+            background-color: #fff3cd;
+            border-left: 5px solid var(--warning);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .interactive-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin-top: 1rem;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background-color: var(--dark);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #343a40;
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Mourão Trânsito Vivo</h1>
+            <span>Plataforma de Mobilidade Urbana Colaborativa</span>
+        </div>
+        <nav>
+            <a href="#alertas">Alterações</a>
+            <a href="#seguranca">Reportar Risco</a>
+            <a href="#muralha">Muralha Digital</a>
+            <a href="#pontos">Pontuação</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Construindo um trânsito mais seguro juntos</h2>
+        <p>Acompanhe mudanças viárias, reporte pontos perigosos para pedestres e ciclistas e colabore com a mobilidade de Campo Mourão.</p>
+        <a href="#seguranca" class="btn">Reportar um Problema Agora</a>
+    </section>
+
+    <div class="container">
+        
+        <div class="alert-box" id="alertas">
+            <strong>⚠️ Alerta de Fluxo Recente:</strong> Trecho urbanizado da PR-158 (Próximo à Coamo e Shopping) passou por reconfiguração de retornos. Fique atento aos novos semáforos instalados na região.
+        </div>
+
+        <h2>Nossos Pilares de Atuação</h2>
+        <div class="grid">
+            <div class="card warning">
+                <h3>🗺️ Mudanças em Tempo Real</h3>
+                <p>Notificações sobre alterações rápidas de sentido em ruas, novas rotatórias e semáforos instalados pelo Diretran nas avenidas principais.</p>
+            </div>
+            
+            <div class="card danger">
+                <h3>🚲 Ciclista e Pedestre Seguro</h3>
+                <p>Mapeamento colaborativo para apontar cruzamentos perigosos, falta de faixas de pedestre e trechos sem ciclovia estruturada.</p>
+            </div>
+
+            <div class="card">
+                <h3>📸 Transparência da Fiscalização</h3>
+                <p>Consulte a localização exata de todas as câmeras de monitoramento da Muralha Digital e reporte semáforos com defeito técnico.</p>
+            </div>
+
+            <div class="card success">
+                <h3>🏆 Motorista Consciente</h3>
+                <p>Ganha pontos quem respeita os limites de velocidade locais. Troque seus pontos por descontos no comércio e na Zona Azul.</p>
+            </div>
+        </div>
+
+        <section class="interactive-section" id="seguranca">
+            <h2>📢 Central de Alertas Colaborativos</h2>
+            <p>Viu uma faixa apagada? Um motorista furando sinal recorrentemente? Ajude a mapear os riscos de Campo Mourão.</p>
+            
+            <form onsubmit="alert('Obrigado! Seu relato foi registrado de forma anônima e enviado para a análise da comunidade e órgãos competentes.'); return false;">
+                <div>
+                    <label for="local">Localização do Problema (Rua/Avenida ou Ponto de Referência):</label>
+                    <input type="text" id="local" placeholder="Ex: Av. Miguel Luiz Pereira, próximo ao Paraná Família" required>
+                </div>
+
+                <div>
+                    <label for="tipo">Tipo de Ocorrência:</label>
+                    <select id="tipo" required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="pedestre">Falta de preferência ao pedestre / Faixa apagada</option>
+                        <option value="ciclista">Ciclovia obstruída ou inexistente</option>
+                        <option value="semaforo">Semáforo desregulado / Tempo muito curto</option>
+                        <option value="imprudencia">Ponto crítico de alta velocidade</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="descricao">Detalhes do problema:</label>
+                    <textarea id="descricao" rows="4" placeholder="Descreva brevemente o que está gerando perigo no local..."></textarea>
+                </div>
+
+                <button type="submit">Enviar Alerta de Risco</button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mourão Trânsito Vivo. Iniciativa cidadã para um trânsito humanizado em Campo Mourão - PR.</p>
+    </footer>
+
+</body>
+</html>
